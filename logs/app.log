@@ -1,0 +1,503 @@
+[2025-12-26 18:48:01] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 18:48:01] WARN  ConnectionProviderInitiator:186 - HHH000181: No appropriate connection provider encountered, assuming application will be supplying connections
+[2025-12-26 18:48:01] WARN  JdbcEnvironmentInitiator:425 - HHH000342: Could not obtain connection to query JDBC database metadata
+java.lang.UnsupportedOperationException: The application must supply JDBC connections
+	at org.hibernate.engine.jdbc.connections.internal.UserSuppliedConnectionProviderImpl.getConnection(UserSuppliedConnectionProviderImpl.java:42)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:499)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:48)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:355)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironment(JdbcEnvironmentInitiator.java:149)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:127)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:82)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:133)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:262)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:44)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:255)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:207)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:185)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:146)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:432)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1081)
+	at org.example.configuration.SessionFactoryUtil.getSessionFactory(SessionFactoryUtil.java:23)
+	at org.example.Main.main(Main.java:11)
+[2025-12-26 19:10:18] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 19:10:18] WARN  ConnectionProviderInitiator:186 - HHH000181: No appropriate connection provider encountered, assuming application will be supplying connections
+[2025-12-26 19:10:18] WARN  JdbcEnvironmentInitiator:425 - HHH000342: Could not obtain connection to query JDBC database metadata
+java.lang.UnsupportedOperationException: The application must supply JDBC connections
+	at org.hibernate.engine.jdbc.connections.internal.UserSuppliedConnectionProviderImpl.getConnection(UserSuppliedConnectionProviderImpl.java:42)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:499)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:48)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:355)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironment(JdbcEnvironmentInitiator.java:149)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:127)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:82)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:133)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:262)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:44)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:255)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:207)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:185)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:146)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:432)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1081)
+	at org.example.configuration.SessionFactoryUtil.getSessionFactory(SessionFactoryUtil.java:23)
+	at org.example.Main.main(Main.java:11)
+[2025-12-26 19:10:57] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 19:10:57] WARN  ConnectionProviderInitiator:186 - HHH000181: No appropriate connection provider encountered, assuming application will be supplying connections
+[2025-12-26 19:10:57] WARN  JdbcEnvironmentInitiator:425 - HHH000342: Could not obtain connection to query JDBC database metadata
+java.lang.UnsupportedOperationException: The application must supply JDBC connections
+	at org.hibernate.engine.jdbc.connections.internal.UserSuppliedConnectionProviderImpl.getConnection(UserSuppliedConnectionProviderImpl.java:42)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:499)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:48)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:355)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironment(JdbcEnvironmentInitiator.java:149)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:127)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:82)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:133)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:262)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:44)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:255)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:207)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:185)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:146)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:432)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1081)
+	at org.example.configuration.SessionFactoryUtil.getSessionFactory(SessionFactoryUtil.java:23)
+	at org.example.Main.main(Main.java:11)
+[2025-12-26 19:12:23] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 19:12:23] WARN  ConnectionProviderInitiator:186 - HHH000181: No appropriate connection provider encountered, assuming application will be supplying connections
+[2025-12-26 19:12:23] WARN  JdbcEnvironmentInitiator:425 - HHH000342: Could not obtain connection to query JDBC database metadata
+java.lang.UnsupportedOperationException: The application must supply JDBC connections
+	at org.hibernate.engine.jdbc.connections.internal.UserSuppliedConnectionProviderImpl.getConnection(UserSuppliedConnectionProviderImpl.java:42)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:499)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:48)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:355)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironment(JdbcEnvironmentInitiator.java:149)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:127)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:82)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:133)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:262)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:44)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:255)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:207)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:185)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:146)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:432)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1081)
+	at org.example.configuration.SessionFactoryUtil.getSessionFactory(SessionFactoryUtil.java:23)
+	at org.example.Main.main(Main.java:11)
+[2025-12-26 19:12:53] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 19:12:54] WARN  ConnectionProviderInitiator:186 - HHH000181: No appropriate connection provider encountered, assuming application will be supplying connections
+[2025-12-26 19:12:54] WARN  JdbcEnvironmentInitiator:425 - HHH000342: Could not obtain connection to query JDBC database metadata
+java.lang.UnsupportedOperationException: The application must supply JDBC connections
+	at org.hibernate.engine.jdbc.connections.internal.UserSuppliedConnectionProviderImpl.getConnection(UserSuppliedConnectionProviderImpl.java:42)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:499)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:48)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:355)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironment(JdbcEnvironmentInitiator.java:149)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:127)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:82)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:133)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:262)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:44)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:255)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:207)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:185)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:146)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:432)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1081)
+	at org.example.configuration.SessionFactoryUtil.getSessionFactory(SessionFactoryUtil.java:23)
+	at org.example.Main.main(Main.java:11)
+[2025-12-26 19:15:58] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 19:15:58] WARN  ConnectionProviderInitiator:186 - HHH000181: No appropriate connection provider encountered, assuming application will be supplying connections
+[2025-12-26 19:15:58] WARN  JdbcEnvironmentInitiator:425 - HHH000342: Could not obtain connection to query JDBC database metadata
+java.lang.UnsupportedOperationException: The application must supply JDBC connections
+	at org.hibernate.engine.jdbc.connections.internal.UserSuppliedConnectionProviderImpl.getConnection(UserSuppliedConnectionProviderImpl.java:42)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:499)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:48)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:355)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironment(JdbcEnvironmentInitiator.java:149)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:127)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:82)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:133)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:262)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:44)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:255)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:207)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:185)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:146)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:432)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1081)
+	at org.example.configuration.SessionFactoryUtil.getSessionFactory(SessionFactoryUtil.java:23)
+	at org.example.Main.main(Main.java:11)
+[2025-12-26 19:17:56] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 19:17:56] WARN  ConnectionProviderInitiator:186 - HHH000181: No appropriate connection provider encountered, assuming application will be supplying connections
+[2025-12-26 19:17:56] WARN  JdbcEnvironmentInitiator:425 - HHH000342: Could not obtain connection to query JDBC database metadata
+java.lang.UnsupportedOperationException: The application must supply JDBC connections
+	at org.hibernate.engine.jdbc.connections.internal.UserSuppliedConnectionProviderImpl.getConnection(UserSuppliedConnectionProviderImpl.java:42) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:499) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:48) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:355) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironment(JdbcEnvironmentInitiator.java:149) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:127) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:82) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:133) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:262) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:44) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:255) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:207) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:185) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:146) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:432) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1081) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.example.configuration.SessionFactoryUtil.getSessionFactory(SessionFactoryUtil.java:23) [main/:?]
+	at org.example.Main.main(Main.java:11) [main/:?]
+[2025-12-26 19:18:43] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 19:18:43] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, hibernate.dialect=org.hibernate.dialect.MySQLDialect, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2025-12-26 19:18:43] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2025-12-26 19:18:44] WARN  JdbcEnvironmentInitiator:425 - HHH000342: Could not obtain connection to query JDBC database metadata
+java.lang.IllegalStateException: Cannot get a connection as the driver manager is not properly initialized
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:281) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:499) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:48) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:355) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironment(JdbcEnvironmentInitiator.java:149) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:127) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:82) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:133) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:262) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.ServiceRegistry.requireService(ServiceRegistry.java:66) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:50) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:139) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.convertSqlException(BasicConnectionCreator.java:131) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:41) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:59) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildPool(DriverManagerConnectionProviderImpl.java:124) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:86) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:139) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.ServiceRegistry.requireService(ServiceRegistry.java:66) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:466) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:342) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironment(JdbcEnvironmentInitiator.java:149) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:127) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:82) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:133) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:262) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:44) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:255) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:207) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:185) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:146) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:432) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1081) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.example.configuration.SessionFactoryUtil.getSessionFactory(SessionFactoryUtil.java:23) [main/:?]
+	at org.example.Main.main(Main.java:11) [main/:?]
+[2025-12-26 19:18:44] WARN  deprecation:152 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-12-26 19:26:22] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 19:26:22] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, hibernate.dialect=org.hibernate.dialect.MySQLDialect, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2025-12-26 19:26:22] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2025-12-26 19:26:22] WARN  JdbcEnvironmentInitiator:425 - HHH000342: Could not obtain connection to query JDBC database metadata
+java.lang.IllegalStateException: Cannot get a connection as the driver manager is not properly initialized
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:281) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:499) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:48) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:355) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironment(JdbcEnvironmentInitiator.java:149) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:127) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:82) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:133) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:262) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.ServiceRegistry.requireService(ServiceRegistry.java:66) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:50) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:139) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.convertSqlException(BasicConnectionCreator.java:131) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:41) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:59) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildPool(DriverManagerConnectionProviderImpl.java:124) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:86) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:139) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.ServiceRegistry.requireService(ServiceRegistry.java:66) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:466) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:342) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironment(JdbcEnvironmentInitiator.java:149) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:127) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:82) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:133) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:262) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:44) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:255) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:207) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:185) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:146) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:432) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1081) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.example.configuration.SessionFactoryUtil.getSessionFactory(SessionFactoryUtil.java:23) [main/:?]
+	at org.example.Main.main(Main.java:11) [main/:?]
+[2025-12-26 19:26:22] WARN  deprecation:152 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-12-26 19:27:19] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 19:27:19] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, hibernate.dialect=org.hibernate.dialect.MySQLDialect, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2025-12-26 19:27:19] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2025-12-26 19:27:19] WARN  deprecation:152 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-12-26 19:27:19] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2025-12-26 19:41:10] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 19:41:10] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, hibernate.dialect=org.hibernate.dialect.MySQLDialect, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2025-12-26 19:43:33] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 19:43:33] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, hibernate.dialect=org.hibernate.dialect.MySQLDialect, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2025-12-26 19:43:48] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 19:43:48] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, hibernate.dialect=org.hibernate.dialect.MySQLDialect, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2025-12-26 19:46:15] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 19:46:15] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, hibernate.dialect=org.hibernate.dialect.MySQLDialect, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2025-12-26 19:46:15] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2025-12-26 19:46:15] WARN  deprecation:152 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-12-26 19:46:15] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2025-12-26 19:47:03] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 19:47:03] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, hibernate.dialect=org.hibernate.dialect.MySQLDialect, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2025-12-26 19:47:03] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2025-12-26 19:47:03] WARN  deprecation:152 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-12-26 19:47:03] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2025-12-26 19:50:49] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 19:50:49] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, hibernate.dialect=org.hibernate.dialect.MySQLDialect, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2025-12-26 19:50:49] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2025-12-26 19:50:49] WARN  deprecation:152 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-12-26 19:50:49] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2025-12-26 19:50:54] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 19:50:54] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, hibernate.dialect=org.hibernate.dialect.MySQLDialect, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2025-12-26 19:50:55] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2025-12-26 19:50:55] WARN  deprecation:152 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-12-26 19:50:55] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2025-12-26 19:52:34] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 19:52:34] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, hibernate.dialect=org.hibernate.dialect.MySQLDialect, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2025-12-26 19:52:34] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2025-12-26 19:52:34] WARN  deprecation:152 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-12-26 19:52:34] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2025-12-26 19:52:37] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 19:52:37] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, hibernate.dialect=org.hibernate.dialect.MySQLDialect, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2025-12-26 19:52:37] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2025-12-26 19:52:38] WARN  deprecation:152 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-12-26 19:52:38] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2025-12-26 19:54:21] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 19:54:21] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, hibernate.dialect=org.hibernate.dialect.MySQLDialect, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2025-12-26 19:54:21] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2025-12-26 19:54:21] WARN  deprecation:152 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-12-26 19:54:21] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2025-12-26 19:54:24] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 19:54:24] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, hibernate.dialect=org.hibernate.dialect.MySQLDialect, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2025-12-26 19:54:24] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2025-12-26 19:54:24] WARN  deprecation:152 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-12-26 19:54:24] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2025-12-26 20:40:26] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 20:40:26] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, hibernate.dialect=org.hibernate.dialect.MySQLDialect, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2025-12-26 20:40:26] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2025-12-26 20:40:27] WARN  deprecation:152 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-12-26 20:40:27] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2025-12-26 20:42:07] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 20:42:07] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, hibernate.dialect=org.hibernate.dialect.MySQLDialect, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2025-12-26 20:42:07] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2025-12-26 20:42:07] WARN  deprecation:152 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-12-26 20:42:07] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2025-12-26 20:43:50] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 20:43:50] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2025-12-26 20:43:50] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2025-12-26 20:43:50] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2025-12-26 20:43:55] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 20:43:55] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2025-12-26 20:43:55] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2025-12-26 20:43:55] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2025-12-26 20:46:13] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2025-12-26 20:46:13] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2025-12-26 20:46:13] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2025-12-26 20:46:14] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2025-12-26 20:46:14] INFO  JtaPlatformInitiator:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)

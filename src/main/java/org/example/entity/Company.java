@@ -1,19 +1,25 @@
 package org.example.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
 @Table(name="company")
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "shippment_count")
-    private int shippmentCount;
+    @Column(name = "shipment_count")
+    private int shipmentCount;
 
     @OneToMany(mappedBy = "company")
     private Set<Employee> employees;
@@ -25,26 +31,6 @@ public class Company {
     public Company(long id, String name, int shippmentCount) {
         this.id = id;
         this.name = name;
-        this.shippmentCount = shippmentCount;
+        this.shipmentCount = shippmentCount;
     }
-
-    public long getId() {
-        return id;
-    }
-    public void setId(Integer id) {
-        this.id = id;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public int getShippmentCount() {
-        return shippmentCount;
-    }
-    public void setShippmentCount(int shippmentCount) {
-        this.shippmentCount = shippmentCount;
-    }
-
 }

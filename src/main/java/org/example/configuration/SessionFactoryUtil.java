@@ -10,17 +10,25 @@ public class SessionFactoryUtil {
     private static SessionFactory sessionFactory;
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
-            Configuration configuration = new Configuration();
+            try {
+                Configuration configuration = new Configuration();
 
-            configuration.addAnnotatedClass(Company.class);
-            configuration.addAnnotatedClass(Employee.class);
-            configuration.addAnnotatedClass(License.class);
-            configuration.addAnnotatedClass(Client.class);
-            configuration.addAnnotatedClass(Shipment.class);
-            configuration.addAnnotatedClass(Vehicle.class);
+                configuration.addAnnotatedClass(Company.class);
+                configuration.addAnnotatedClass(Employee.class);
+                configuration.addAnnotatedClass(License.class);
+                configuration.addAnnotatedClass(Client.class);
+                configuration.addAnnotatedClass(Shipment.class);
+                configuration.addAnnotatedClass(Vehicle.class);
 
-            ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
-            sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+                ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
+                        .applySettings(configuration.getProperties())
+                        .build();
+
+                sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+            } catch (Exception e) {
+                e.printStackTrace();
+                throw new RuntimeException("SessionFactory creation failed");
+            }
         }
         return sessionFactory;
     }
