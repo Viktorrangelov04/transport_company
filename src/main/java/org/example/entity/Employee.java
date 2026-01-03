@@ -3,32 +3,24 @@ package org.example.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.example.enums.LicenseType;
 
 import java.util.Set;
 
 @Entity
-@Getter
-@Setter
 @Table(name="employee")
-public class Employee {
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private long id;
-
+public class Employee extends BaseEntity{
     @Column(name = "name")
     private String name;
+
+    @ElementCollection(targetClass = LicenseType.class)
+    @Enumerated(EnumType.STRING)
+    @CollectionTable(name = "driver_licenses")
+    private Set<LicenseType> categories;
 
     @ManyToOne
     @JoinColumn(name = "company_id")
     private Company company;
-
-    @ManyToMany
-    @JoinTable(
-            name = "employee_license",
-            joinColumns = @JoinColumn(name = "employee_id"),
-            inverseJoinColumns = @JoinColumn(name = "license_id")
-    )
-    private Set<License> licenses;
 
     public Employee(){};
     public Employee(long id, String name, Company company) {

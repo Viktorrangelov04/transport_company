@@ -2,20 +2,15 @@ package org.example.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Set;
 
 @Entity
-@Getter
-@Setter
+@NoArgsConstructor
 @Table(name="company")
-public class Company {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
-    @Column(name = "name")
+public class Company extends BaseEntity{
     private String name;
 
     @Column(name = "shipment_count")
@@ -27,7 +22,6 @@ public class Company {
     @OneToMany(mappedBy = "company")
     private Set<Client> clients;
 
-    public Company(){};
     public Company(long id, String name, int shippmentCount) {
         this.id = id;
         this.name = name;

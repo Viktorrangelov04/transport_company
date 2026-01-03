@@ -9,13 +9,9 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-@Getter
-@Setter
 @Table(name="shipment")
-public class Shipment {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Shipment extends BaseEntity{
+
     private String startLocation;
     private String endLocation;
     private LocalDate startDate;

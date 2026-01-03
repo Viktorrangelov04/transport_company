@@ -7,13 +7,8 @@ import lombok.Setter;
 import java.math.BigDecimal;
 
 @Entity
-@Getter
-@Setter
 @Table(name="client")
-public class Client {
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private long id;
+public class Client extends BaseEntity{
     private String name;
     @Column(name = "owed_money")
     private BigDecimal owedMoney;
