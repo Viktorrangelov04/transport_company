@@ -15,11 +15,10 @@ public class SessionFactoryUtil {
 
                 configuration.addAnnotatedClass(Company.class);
                 configuration.addAnnotatedClass(Employee.class);
-                configuration.addAnnotatedClass(License.class);
                 configuration.addAnnotatedClass(Client.class);
                 configuration.addAnnotatedClass(Shipment.class);
                 configuration.addAnnotatedClass(Vehicle.class);
-
+                configuration.addAnnotatedClass(org.example.entity.Qualification.class);
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                         .applySettings(configuration.getProperties())
                         .build();
