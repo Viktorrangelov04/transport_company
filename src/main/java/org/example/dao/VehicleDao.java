@@ -22,7 +22,7 @@ public class VehicleDao {
         }
     }
 
-    public static Vehicle get(Long id) {
+    public static Vehicle getById(Long id) {
         try(Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
             return session.find(Vehicle.class, id);
         }

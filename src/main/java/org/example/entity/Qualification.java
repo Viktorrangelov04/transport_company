@@ -22,7 +22,7 @@ public class Qualification extends BaseEntity {
 
     private String description;
 
-    @OneToMany(mappedBy = "requiredQualification")
+    @OneToMany(mappedBy = "qualification")
     private Set<Vehicle> vehicles;
 
     public Qualification(String name) {

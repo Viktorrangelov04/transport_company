@@ -18,11 +18,10 @@ public class Vehicle extends BaseEntity{
 
     @ManyToOne
     @JoinColumn(name = "qualification_id")
-    private Qualification requiredQualification;
+    private Qualification qualification;
 
     public Vehicle() {}
-    public Vehicle(Long id, String name, Company company) {
-        this.id = id;
+    public Vehicle(String name, Company company) {
         this.name = name;
         this.company = company;
     }

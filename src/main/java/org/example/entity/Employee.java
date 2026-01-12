@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.example.enums.LicenseType;
 
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,8 +18,8 @@ import java.util.Set;
 @NoArgsConstructor
 @ToString
 public class Employee extends BaseEntity{
-    @Column(name = "name")
     private String name;
+    private BigDecimal salary;
 
     @ManyToMany
     @JoinTable(
@@ -32,8 +33,13 @@ public class Employee extends BaseEntity{
     @JoinColumn(name = "company_id")
     private Company company;
 
-    public Employee(String name, Company company) {
+    public Employee(String name, BigDecimal salary, Company company) {
         this.name = name;
+        this.salary = salary;
         this.company = company;
+    }
+
+    public void addQualification(Qualification qualification) {
+        qualifications.add(qualification);
     }
 }

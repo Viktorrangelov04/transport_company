@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -17,18 +18,39 @@ import java.util.Set;
 public class Company extends BaseEntity{
     private String name;
 
-    @Column(name = "shipment_count")
-    private int shipmentCount;
+    @ToString.Exclude
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Employee> employees = new HashSet<>();
 
     @ToString.Exclude
-    @OneToMany(mappedBy = "company")
-    private Set<Employee> employees;
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true,  fetch = FetchType.EAGER)
+    private Set<Client> clients = new HashSet<>();
 
     @ToString.Exclude
-    @OneToMany(mappedBy = "company")
-    private Set<Client> clients;
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Vehicle> vehicles = new HashSet<>();
+
+    @ToString.Exclude
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true,  fetch = FetchType.EAGER)
+    private Set<Shipment> shipments = new HashSet<>();
+
 
     public Company( String name) {
         this.name = name;
+    }
+
+    public void addEmployee(Employee employee) {
+        employees.add(employee);
+        employee.setCompany(this);
+    }
+
+    public void addVehicle(Vehicle vehicle) {
+        vehicles.add(vehicle);
+        vehicle.setCompany(this);
+    }
+
+    public void addClient(Client client) {
+        clients.add(client);
+        client.setCompany(this);
     }
 }

@@ -31,12 +31,25 @@ public class EmployeeDao {
         }
     }
 
+    public List<Employee> findByQualification(String qualName) {
+        try (Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
+            return session.createQuery("SELECT e FROM Employee e " + "JOIN e.qualifications q " + "WHERE q.name = :qualName", Employee.class)
+                    .setParameter("qualName", qualName)
+                    .list();
+        }
+    }
+
+    public List<Employee> findAllSortedBySalary() {
+        try (Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
+            return session.createQuery("FROM Employee ORDER BY salary DESC", Employee.class)
+                    .list();
+        }
+    }
+
     public static void update(long id, Employee employee) {
         try(Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
-            Employee employee1=session.find(Employee.class, id);
-            employee1.setName(employee.getName());
-            session.persist(employee1);
+            session.merge(employee);
             transaction.commit();
         }
     }

@@ -8,7 +8,7 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 public class CompanyDao {
-    public static void createCompany(Company company) {
+    public static void create(Company company) {
         try(Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
             session.persist(company);
@@ -16,30 +16,36 @@ public class CompanyDao {
         }
     }
 
-    public static List<Company> getCompanies() {
+    public static List<Company> findAll() {
         try(Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
             return session.createQuery("SELECT c FROM Company c", Company.class).getResultList();
         }
     }
 
-    public static Company getCompany(long id) {
+    public static Company getById(long id) {
         try(Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
             return session.find(Company.class, id);
 
         }
     }
 
-    public static void updateCompany(long id, Company company) {
-        try(Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
+    public List<Company> filterByName(String namePart) {
+        try (Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
+            return session.createQuery("FROM Company WHERE name LIKE :name", Company.class)
+                    .setParameter("name", "%" + namePart + "%")
+                    .list();
+        }
+    }
+
+    public static void update(Company company) {
+        try (Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
-            Company company1=session.find(Company.class, id);
-            company1.setName(company.getName());
-            session.persist(company1);
+            session.merge(company);
             transaction.commit();
         }
     }
 
-    public static void deleteCompany(long id) {
+    public static void delete(long id) {
         try(Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
             Company company1=session.find(Company.class, id);
