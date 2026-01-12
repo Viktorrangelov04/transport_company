@@ -1265,3 +1265,309 @@ java.lang.IllegalStateException: Cannot get a connection as the driver manager i
 	Minimum pool size: 1
 	Maximum pool size: 20
 [2026-01-12 21:24:25] INFO  JtaPlatformInitiator:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-01-12 22:06:33] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2026-01-12 22:06:33] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2026-01-12 22:06:34] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2026-01-12 22:06:34] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2026-01-12 22:06:34] INFO  JtaPlatformInitiator:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-01-12 22:09:37] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2026-01-12 22:09:37] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2026-01-12 22:09:38] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2026-01-12 22:09:38] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2026-01-12 22:09:38] INFO  JtaPlatformInitiator:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-01-12 22:09:52] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2026-01-12 22:09:52] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2026-01-12 22:09:52] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2026-01-12 22:09:52] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2026-01-12 22:09:52] INFO  JtaPlatformInitiator:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-01-12 22:58:54] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2026-01-12 22:58:54] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2026-01-12 22:58:54] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2026-01-12 22:58:54] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2026-01-12 22:58:55] INFO  JtaPlatformInitiator:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-01-12 23:00:38] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2026-01-12 23:00:38] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2026-01-12 23:00:38] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2026-01-12 23:00:39] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2026-01-12 23:00:39] INFO  JtaPlatformInitiator:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-01-12 23:23:24] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2026-01-12 23:23:24] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2026-01-12 23:23:24] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2026-01-12 23:23:25] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2026-01-12 23:23:25] INFO  JtaPlatformInitiator:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-01-12 23:25:53] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2026-01-12 23:25:53] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2026-01-12 23:25:53] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2026-01-12 23:25:53] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2026-01-12 23:25:53] INFO  JtaPlatformInitiator:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-01-12 23:28:00] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2026-01-12 23:28:00] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2026-01-12 23:28:00] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2026-01-12 23:28:00] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2026-01-12 23:28:01] INFO  JtaPlatformInitiator:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-01-12 23:30:23] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2026-01-12 23:30:23] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2026-01-12 23:30:23] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2026-01-12 23:30:24] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2026-01-12 23:30:24] INFO  JtaPlatformInitiator:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-01-12 23:30:52] INFO  DefaultLoadEventListener:115 - HHH000327: Error performing load command
+org.hibernate.ObjectNotFoundException: No row with the given identifier exists for entity [org.example.entity.Employee with id '5']
+	at org.hibernate.boot.internal.StandardEntityNotFoundDelegate.handleEntityNotFound(StandardEntityNotFoundDelegate.java:24) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:209) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadWithRegularProxy(DefaultLoadEventListener.java:284) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:236) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:109) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:68) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:151) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1291) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.internal.SessionImpl.internalLoad(SessionImpl.java:1051) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.type.EntityType.resolveIdentifier(EntityType.java:677) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.type.EntityType.resolve(EntityType.java:410) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.type.EntityType.replace(EntityType.java:337) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.type.CollectionType.createMapSnapshot(CollectionType.java:591) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.type.CollectionType.createSnapshot(CollectionType.java:544) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.type.CollectionType.preserveSnapshot(CollectionType.java:528) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.type.CollectionType.replaceElements(CollectionType.java:508) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.type.CollectionType.replaceOriginal(CollectionType.java:662) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.type.CollectionType.replace(CollectionType.java:649) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.type.TypeHelper.replace(TypeHelper.java:85) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.entityIsDetached(DefaultMergeEventListener.java:465) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.merge(DefaultMergeEventListener.java:205) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.doMerge(DefaultMergeEventListener.java:149) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:133) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:89) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:140) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.internal.SessionImpl.fireMerge(SessionImpl.java:797) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.internal.SessionImpl.merge(SessionImpl.java:783) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.example.dao.CompanyDao.update(CompanyDao.java:43) [main/:?]
+	at org.example.service.EmployeeService.deleteEmployee(EmployeeService.java:72) [main/:?]
+	at org.example.service.EmployeeService.manageEmployees(EmployeeService.java:31) [main/:?]
+	at org.example.Main.main(Main.java:80) [main/:?]
+[2026-01-12 23:31:03] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2026-01-12 23:31:03] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2026-01-12 23:31:03] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2026-01-12 23:31:03] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2026-01-12 23:31:03] INFO  JtaPlatformInitiator:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-01-13 00:13:28] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2026-01-13 00:13:28] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2026-01-13 00:13:28] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2026-01-13 00:13:28] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2026-01-13 00:13:28] INFO  JtaPlatformInitiator:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-01-13 00:14:09] INFO  DefaultLoadEventListener:115 - HHH000327: Error performing load command
+org.hibernate.ObjectNotFoundException: No row with the given identifier exists for entity [org.example.entity.Employee with id '6']
+	at org.hibernate.boot.internal.StandardEntityNotFoundDelegate.handleEntityNotFound(StandardEntityNotFoundDelegate.java:24) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:209) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadWithRegularProxy(DefaultLoadEventListener.java:284) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:236) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:109) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:68) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:151) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1291) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.internal.SessionImpl.internalLoad(SessionImpl.java:1051) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.type.EntityType.resolveIdentifier(EntityType.java:677) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.type.EntityType.resolve(EntityType.java:410) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.type.EntityType.replace(EntityType.java:337) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.type.CollectionType.createMapSnapshot(CollectionType.java:591) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.type.CollectionType.createSnapshot(CollectionType.java:544) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.type.CollectionType.preserveSnapshot(CollectionType.java:528) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.type.CollectionType.replaceElements(CollectionType.java:508) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.type.CollectionType.replaceOriginal(CollectionType.java:662) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.type.CollectionType.replace(CollectionType.java:649) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.type.TypeHelper.replace(TypeHelper.java:85) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.entityIsDetached(DefaultMergeEventListener.java:465) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.merge(DefaultMergeEventListener.java:205) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.doMerge(DefaultMergeEventListener.java:149) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:133) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:89) ~[hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:140) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.internal.SessionImpl.fireMerge(SessionImpl.java:797) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.hibernate.internal.SessionImpl.merge(SessionImpl.java:783) [hibernate-core-7.1.4.Final.jar:7.1.4.Final]
+	at org.example.dao.CompanyDao.update(CompanyDao.java:43) [main/:?]
+	at org.example.service.EmployeeService.deleteEmployee(EmployeeService.java:73) [main/:?]
+	at org.example.service.EmployeeService.manageEmployees(EmployeeService.java:31) [main/:?]
+	at org.example.Main.main(Main.java:80) [main/:?]
+[2026-01-13 00:34:05] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2026-01-13 00:34:05] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2026-01-13 00:34:05] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2026-01-13 00:34:05] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2026-01-13 00:34:06] INFO  JtaPlatformInitiator:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-01-13 01:07:17] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2026-01-13 01:07:17] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2026-01-13 01:07:17] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2026-01-13 01:07:17] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2026-01-13 01:07:18] INFO  JtaPlatformInitiator:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-01-13 01:09:02] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2026-01-13 01:09:02] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2026-01-13 01:09:02] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2026-01-13 01:09:02] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2026-01-13 01:09:03] INFO  JtaPlatformInitiator:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-01-13 01:11:49] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2026-01-13 01:11:49] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2026-01-13 01:11:49] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2026-01-13 01:11:50] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2026-01-13 01:11:50] INFO  JtaPlatformInitiator:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)

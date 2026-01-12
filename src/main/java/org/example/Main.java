@@ -3,7 +3,10 @@ package org.example;
 import org.example.configuration.SessionFactoryUtil;
 import org.example.dao.*;
 import org.example.entity.*;
+import org.example.service.ClientService;
+import org.example.service.EmployeeService;
 import org.example.service.MenuService;
+import org.example.service.VehicleService;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
@@ -22,7 +25,11 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         //Initializing companies and qualifications
         Scanner scanner = new Scanner(System.in);
+
         MenuService menu = new MenuService(scanner);
+        EmployeeService employeeService = new EmployeeService();
+        VehicleService vehicleService = new VehicleService();
+        ClientService clientService = new ClientService();
 
         List<Qualification> allQualifications = QualificationDao.findAll();
         Map<String, Qualification> qualificationMap = allQualifications.stream()
@@ -37,31 +44,57 @@ public class Main {
                 System.out.println("[1] Select a company");
                 System.out.println("[2] Create a new company");
                 System.out.println("[0] Exit");
-                int startChoise=scanner.nextInt();
+                int startChoice=scanner.nextInt();
                 scanner.nextLine();
 
-                if(startChoise==1){
-                    activeCompany=menu.selectCompanyMenu();
-                }else{
-                    running =false;
+                switch (startChoice) {
+                    case 1:
+                        activeCompany = menu.selectCompanyMenu();
+                        break;
+                    case 2:
+                        System.out.println("Company name:");
+                        String name = scanner.nextLine();
+                        Company company = new Company(name);
+                        CompanyDao.create(company);
+                        System.out.println("Company created successfully!");
+                        activeCompany = company;
+                        break;
+                    case 0:
+                        running = false;
+                        break;
+                    default:
+                        System.out.println("Invalid option.");
                 }
             }else{
+                System.out.println("Current company: " + activeCompany.getName());
                 System.out.println("Choose an option");
-                System.out.println("[1] View employees");
-                System.out.println("[2] View Vehicles");
-                System.out.println("[3] View Clients");
-                System.out.println("[4] Register Shipment");
+                System.out.println("[1] Manage Employees");
+                System.out.println("[2] Manage Vehicles");
+                System.out.println("[3] Manage Clients");
+                System.out.println("[4] Manage Shipments");
                 System.out.println("[5] Change company");
+                System.out.println("[9] Delete Company");
                 System.out.println("[0] Exit");
 
                 int choice=scanner.nextInt();
                 scanner.nextLine();
 
                 switch(choice){
-                    case 1: menu.showEmployees(activeCompany); break;
-                    case 2: menu.showVehicles(activeCompany); break;
-                    case 3: menu.showClients(activeCompany); break;
+                    case 1: employeeService.manageEmployees(activeCompany, scanner);; break;
+                    case 2: vehicleService.manageVehicles(activeCompany,scanner); break;
+                    case 3: clientService.manageClients(activeCompany, scanner); break;
                     case 5: activeCompany=null; break;
+
+                    case 9:
+                        System.out.println("Are you sure you want to delete? (y/n)");
+                        String confirm =scanner.nextLine();
+                        if(confirm.equals("y")){
+                            CompanyDao.delete(activeCompany.getId());
+                            activeCompany=null;
+                            System.out.println("Company deleted successfully!");
+                        }
+
+                        break;
                     case 0: running = false; break;
                 }
             }

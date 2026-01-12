@@ -37,11 +37,12 @@ public class CompanyDao {
         }
     }
 
-    public static void update(Company company) {
+    public static Company update(Company company) {
         try (Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
-            session.merge(company);
+            Company updatedCompany = session.merge(company);
             transaction.commit();
+            return updatedCompany;
         }
     }
 
