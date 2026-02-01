@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.example.enums.ShipingType;
 import org.example.enums.ShipmentStatus;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -15,7 +16,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Shipment extends BaseEntity{
+public class Shipment extends BaseEntity implements Serializable {
     @ManyToOne
     private Company company;
     @ManyToOne
@@ -39,57 +40,5 @@ public class Shipment extends BaseEntity{
     private ShipingType type;
     @Enumerated(EnumType.STRING)
     private ShipmentStatus status = ShipmentStatus.PENDING;
-
-    public Shipment(ShipingType type) {
-        this.type=type;
-    }
-
-    public static Shipment createPassangerShipment(Company company, Employee employee, Client client,Vehicle vehicle, String startLocation, String destination,
-                                                  LocalDate startDate, LocalDate endDate, BigDecimal cost){
-        Qualification requiredQual = vehicle.getQualification();
-        if (requiredQual != null) {
-            if (!employee.getQualifications().contains(requiredQual)) {
-                throw new IllegalArgumentException("Driver " + employee.getName() +
-                        " lacks the required qualification: " + requiredQual.getName());
-            }
-        }
-
-        Shipment s = new Shipment(ShipingType.PEOPLE);
-        s.setCompany(company);
-        s.setEmployee(employee);
-        s.setClient(client);
-        s.setVehicle(vehicle);
-        s.setStartLocation(startLocation);
-        s.setDestination(destination);
-        s.setStartDate(startDate);
-        s.setEndDate(endDate);
-        s.setCost(cost);
-        s.weight = null;
-        return s;
-    }
-
-    public static Shipment createFreightShipment(Company company, Employee employee, Client client,Vehicle vehicle, String startLocation, String destination,
-                                                 LocalDate startDate, LocalDate endDate, BigDecimal cost, double weight) {
-        Qualification requiredQual = vehicle.getQualification();
-        if (requiredQual != null) {
-            if (!employee.getQualifications().contains(requiredQual)) {
-                throw new IllegalArgumentException("Driver " + employee.getName() +
-                        " lacks the required qualification: " + requiredQual.getName());
-            }
-        }
-
-        Shipment s = new Shipment(ShipingType.CARRIAGE);
-        s.setCompany(company);
-        s.setEmployee(employee);
-        s.setClient(client);
-        s.setVehicle(vehicle);
-        s.setStartLocation(startLocation);
-        s.setDestination(destination);
-        s.setStartDate(startDate);
-        s.setEndDate(endDate);
-        s.setCost(cost);
-        s.setWeight(weight);
-        return s;
-    }
 
 }

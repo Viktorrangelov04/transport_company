@@ -25,9 +25,13 @@ public class EmployeeDao {
         }
     }
 
-    public static Employee getById(long id){
-        try(Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
-            return session.find(Employee.class, id);
+    public static Employee getById(Long id) {
+        try (Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
+            return session.createQuery(
+                            "SELECT e FROM Employee e LEFT JOIN FETCH e.qualifications WHERE e.id = :id",
+                            Employee.class)
+                    .setParameter("id", id)
+                    .uniqueResult();
         }
     }
 
@@ -46,7 +50,7 @@ public class EmployeeDao {
         }
     }
 
-    public static void update(long id, Employee employee) {
+    public static void update(Employee employee) {
         try(Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
             session.merge(employee);

@@ -28,12 +28,10 @@ public class VehicleDao {
         }
     }
 
-    public static void  update(long id, Vehicle vehicle) {
+    public static void  update(Vehicle vehicle) {
         try(Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
-            Vehicle vehicle1=session.find(Vehicle.class, id);
-            vehicle1.setName(vehicle.getName());
-            session.persist(vehicle1);
+            session.merge(vehicle);
             transaction.commit();
         }
     }

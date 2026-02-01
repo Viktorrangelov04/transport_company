@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.example.entity.BaseEntity;
 
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
@@ -16,7 +17,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @Table(name = "qualification")
-public class Qualification extends BaseEntity {
+public class Qualification extends BaseEntity implements Serializable {
     @Column(unique = true, nullable = false)
     private String name;
 

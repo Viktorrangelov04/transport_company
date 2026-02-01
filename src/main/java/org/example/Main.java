@@ -3,10 +3,7 @@ package org.example;
 import org.example.configuration.SessionFactoryUtil;
 import org.example.dao.*;
 import org.example.entity.*;
-import org.example.service.ClientService;
-import org.example.service.EmployeeService;
-import org.example.service.MenuService;
-import org.example.service.VehicleService;
+import org.example.service.*;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
@@ -23,13 +20,16 @@ import static com.google.protobuf.JavaFeaturesProto.java;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        //Initializing companies and qualifications
+        //Initializing companies and qualifications and services
         Scanner scanner = new Scanner(System.in);
 
         MenuService menu = new MenuService(scanner);
-        EmployeeService employeeService = new EmployeeService();
-        VehicleService vehicleService = new VehicleService();
-        ClientService clientService = new ClientService();
+        EmployeeService employeeService = new EmployeeService(scanner);
+        VehicleService vehicleService = new VehicleService(scanner);
+        ClientService clientService = new ClientService(scanner);
+        FileService fileService = new FileService();
+        ShippingService shippingService = new ShippingService(scanner, employeeService, vehicleService, clientService, fileService);
+
 
         List<Qualification> allQualifications = QualificationDao.findAll();
         Map<String, Qualification> qualificationMap = allQualifications.stream()
@@ -73,6 +73,7 @@ public class Main {
                 System.out.println("[3] Manage Clients");
                 System.out.println("[4] Manage Shipments");
                 System.out.println("[5] Change company");
+                System.out.println("[8] Change company name");
                 System.out.println("[9] Delete Company");
                 System.out.println("[0] Exit");
 
@@ -80,11 +81,13 @@ public class Main {
                 scanner.nextLine();
 
                 switch(choice){
-                    case 1: employeeService.manageEmployees(activeCompany, scanner);; break;
-                    case 2: vehicleService.manageVehicles(activeCompany,scanner); break;
-                    case 3: clientService.manageClients(activeCompany, scanner); break;
+                    case 1: activeCompany=employeeService.manageEmployees(activeCompany); break;
+                    case 2: activeCompany=vehicleService.manageVehicles(activeCompany); break;
+                    case 3: activeCompany=clientService.manageClients(activeCompany); break;
+                    case 4: activeCompany=shippingService.manageShipments(activeCompany); break;
                     case 5: activeCompany=null; break;
 
+                    case 8: activeCompany=menu.changeCompanyName(activeCompany); break;
                     case 9:
                         System.out.println("Are you sure you want to delete? (y/n)");
                         String confirm =scanner.nextLine();

@@ -1,20 +1,30 @@
 package org.example.service;
 
 import org.example.dao.CompanyDao;
+import org.example.dao.ShipmentDao;
 import org.example.entity.Client;
 import org.example.entity.Company;
+import org.example.entity.Shipment;
 import org.example.entity.Vehicle;
+import org.example.enums.ShipmentStatus;
 
+import java.math.BigDecimal;
+import java.util.List;
 import java.util.Scanner;
 
 public class ClientService {
+    private final Scanner scanner;
     boolean back = false;
-    public void manageClients(Company company, Scanner scanner){
+    public ClientService(Scanner scanner){
+        this.scanner = scanner;
+    }
+    public Company manageClients(Company company){
         while (!back) {
             System.out.println("\nManaging Clients...");
             System.out.println("[1] List Clients");
             System.out.println("[2] Add New Client");
             System.out.println("[3] Delete Client");
+            System.out.println("[4] Check owed money");
             System.out.println("[0] Back to Company Menu");
 
             int choice = scanner.nextInt();
@@ -25,24 +35,28 @@ public class ClientService {
                     listClients(company);
                     break;
                 case 2:
-                    company = addClient(company, scanner);
+                    company = addClient(company);
                     break;
                 case 3:
-                    company = deleteClient(company, scanner);
+                    company = deleteClient(company);
+                    break;
+                case 4:
+                    getOwedMoney(company);
                     break;
                 case 0:
                     back = true;
                     break;
             }
         }
+        return company;
     }
 
-    private void listClients(Company company) {
+    public void listClients(Company company) {
         company.getClients().forEach(c ->
-                System.out.println(c.getId() + ": " + c.getName() + " (" + c.getOwedMoney() + ")"));
+                System.out.println(c.getId() + ": " + c.getName()));
     }
 
-    private Company addClient(Company company, Scanner scanner){
+    public Company addClient(Company company){
         System.out.println("name:");
         String name = scanner.nextLine();
 
@@ -54,7 +68,7 @@ public class ClientService {
 
         return updated;
     }
-    private Company deleteClient(Company company, Scanner scanner){
+    public Company deleteClient(Company company){
         System.out.print("Enter Client ID to delete: ");
 
         while (!scanner.hasNextLong()) {
@@ -82,4 +96,20 @@ public class ClientService {
             return company;
         }
     }
+
+    public void getOwedMoney(Company company){
+        listClients(company);
+        System.out.println("Enter Client ID to get owed money: ");
+        while (!scanner.hasNextLong()) {
+            scanner.next();
+        }
+        Long id = scanner.nextLong();
+        scanner.nextLine();
+
+        BigDecimal totalOwed = ShipmentDao.getTotalOwedByClient(id);
+
+        System.out.println("Total Balance Owed: $" + totalOwed);
+    }
+
+
 }

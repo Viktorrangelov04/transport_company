@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class MenuService {
-    private  Scanner scanner;
+    private final Scanner scanner;
     public MenuService(Scanner scanner){
         this.scanner = scanner;
     }
@@ -35,34 +35,20 @@ public class MenuService {
         return companies.get(index);
     }
 
-    public void showEmployees(Company company) {
-        System.out.println("\nEmployees for " + company.getName() + ":");
-        if (company.getEmployees().isEmpty()) {
-            System.out.println("No employees found.");
-        } else {
-            for (Employee e : company.getEmployees()) {
-                System.out.println("ID: " + e.getId() + " | Name: " + e.getName() + " | Salary: " + e.getSalary());
-            }
-        }
-    }
+    public Company changeCompanyName(Company company) {
+        System.out.println("Current name: " + company.getName());
+        System.out.println("New name:");
 
-    public void showVehicles(Company company) {
-        System.out.println("\nVehicles for " + company.getName() + ":");
-        for (Vehicle v : company.getVehicles()) {
-            String qual = (v.getQualification() != null) ? v.getQualification().getName() : "None";
-            System.out.println("ID: " + v.getId() + " | Model: " + v.getName() + " | Required Qual: " + qual);
-        }
-    }
+        String newName = scanner.nextLine();
 
-    public void showClients(Company company) {
-        System.out.println("\nClients for " + company.getName() + ":");
-        if(company.getClients().isEmpty()){
-            System.out.println("No Clients found.");
-        }else{
-            for (Client c : company.getClients()) {
-                System.out.println("ID: " + c.getId() + " | Name: " + c.getName());
-            }
+        if (newName != null && !newName.trim().isEmpty()) {
+            company.setName(newName);
+            return CompanyDao.update(company);
         }
 
+        System.out.println("Name change cancelled: Invalid input.");
+        return company;
     }
+
+
 }

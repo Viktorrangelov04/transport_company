@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.example.enums.LicenseType;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,7 +18,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @ToString
-public class Employee extends BaseEntity{
+public class Employee extends BaseEntity implements Serializable {
     private String name;
     private BigDecimal salary;
 

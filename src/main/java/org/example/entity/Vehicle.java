@@ -5,12 +5,14 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.io.Serializable;
+
 @Entity
 @Getter
 @Setter
 @ToString
 @Table(name = "vehicle")
-public class Vehicle extends BaseEntity{
+public class Vehicle extends BaseEntity implements Serializable {
     private String name;
 
     @ManyToOne

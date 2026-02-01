@@ -3,6 +3,7 @@ package org.example.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Entity
@@ -11,7 +12,7 @@ import java.math.BigDecimal;
 @ToString
 @NoArgsConstructor
 @Table(name="client")
-public class Client extends BaseEntity{
+public class Client extends BaseEntity implements Serializable {
     private String name;
     @Column(name = "owed_money", nullable = false)
     private BigDecimal owedMoney = BigDecimal.ZERO;
