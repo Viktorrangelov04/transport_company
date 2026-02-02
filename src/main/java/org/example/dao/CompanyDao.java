@@ -29,7 +29,7 @@ public class CompanyDao {
         }
     }
 
-    public List<Company> filterByName(String namePart) {
+    public static List<Company> filterByName(String namePart) {
         try (Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
             return session.createQuery(
                             "SELECT c FROM Company c WHERE c.name LIKE :name",

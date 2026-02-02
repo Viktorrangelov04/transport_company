@@ -1,19 +1,19 @@
 package org.example.service;
 
 import org.example.dao.CompanyDao;
-import org.example.entity.Client;
+import org.example.dao.EmployeeDao;
+import org.example.dao.ShipmentDao;
 import org.example.entity.Company;
 import org.example.entity.Employee;
-import org.example.entity.Vehicle;
+import org.example.entity.Shipment;
 import org.example.utils.InputReader;
 
-import java.sql.SQLOutput;
+import java.math.BigDecimal;
+import java.util.Comparator;
 import java.util.List;
-import java.util.Scanner;
 
 public class MenuService {
     private final InputReader reader;
-    // Inject all services so the MenuService can coordinate them
     private final EmployeeService employeeService;
     private final VehicleService vehicleService;
     private final ClientService clientService;
@@ -68,8 +68,8 @@ public class MenuService {
     public Company showCompanyDashboard(Company activeCompany) {
         System.out.println("\n--- Dashboard: " + activeCompany.getName() + " ---");
         System.out.println("[1] Employees | [2] Vehicles | [3] Clients | [4] Shipments");
-        System.out.println("[5] Reports   | [6] Change Co | [8] Rename   | [9] Delete");
-        System.out.println("[0] Exit App");
+        System.out.println("[5] Reports   | [6] Change Co | [7] Sort/Filter");
+        System.out.println("[8] Rename    | [9] Delete    | [0] Exit App");
 
         int choice = (int) reader.readLong("Choice: ");
         switch (choice) {
@@ -78,11 +78,154 @@ public class MenuService {
             case 3: return clientService.manageClients(activeCompany);
             case 4: return shippingService.manageShipments(activeCompany);
             case 5: reportService.manageReports(activeCompany); return activeCompany;
-            case 6: return null; // Resets to start menu
+            case 6: return null;
+            case 7: showSortFilterMenu(activeCompany); return activeCompany;
             case 8: return renameCompany(activeCompany);
             case 9: return deleteCompany(activeCompany);
             case 0: System.exit(0);
             default: return activeCompany;
+        }
+    }
+
+    private void showSortFilterMenu(Company company) {
+        boolean back = false;
+        while (!back) {
+            System.out.println("\n--- Sort & Filter Menu ---");
+            System.out.println("[1] Sort all companies by name");
+            System.out.println("[2] Sort all companies by revenue");
+            System.out.println("[3] Filter companies by name");
+            System.out.println("[4] Sort employees by salary");
+            System.out.println("[5] Filter employees by qualification");
+            System.out.println("[6] Sort shipments by destination");
+            System.out.println("[0] Back to Dashboard");
+
+            int choice = (int) reader.readLong("Choice: ");
+            switch (choice) {
+                case 1: sortCompaniesByName(); break;
+                case 2: sortCompaniesByRevenue(); break;
+                case 3: filterCompaniesByName(); break;
+                case 4: sortEmployeesBySalary(company); break;
+                case 5: filterEmployeesByQualification(company); break;
+                case 6: sortShipmentsByDestination(company); break;
+                case 0: back = true; break;
+                default: System.out.println("Invalid option."); break;
+            }
+        }
+    }
+
+    private void sortCompaniesByName() {
+        List<Company> companies = CompanyDao.findAll();
+
+        if (companies.isEmpty()) {
+            System.out.println("No companies found.");
+            return;
+        }
+
+        companies.sort(Comparator.comparing(Company::getName, String.CASE_INSENSITIVE_ORDER));
+
+        System.out.println("\n=== Companies Sorted by Name ===");
+        for (Company c : companies) {
+            System.out.println("ID: " + c.getId() + " | Name: " + c.getName());
+        }
+    }
+
+    private void sortCompaniesByRevenue() {
+        List<Company> companies = CompanyDao.findAll();
+
+        if (companies.isEmpty()) {
+            System.out.println("No companies found.");
+            return;
+        }
+
+        // Sort by revenue descending
+        companies.sort((c1, c2) -> {
+            BigDecimal rev1 = ShipmentDao.getTotalRevenue(c1.getId());
+            BigDecimal rev2 = ShipmentDao.getTotalRevenue(c2.getId());
+            return rev2.compareTo(rev1);
+        });
+
+        System.out.println("\n=== Companies Sorted by Revenue (Highest First) ===");
+        for (Company c : companies) {
+            BigDecimal revenue = ShipmentDao.getTotalRevenue(c.getId());
+            System.out.printf("ID: %d | Name: %s | Revenue: $%.2f%n",
+                    c.getId(), c.getName(), revenue);
+        }
+    }
+
+    private void filterCompaniesByName() {
+        String searchTerm = reader.readString("Enter name to search: ");
+
+        List<Company> companies = CompanyDao.findAll();
+        List<Company> filtered = companies.stream()
+                .filter(c -> c.getName().toLowerCase().contains(searchTerm.toLowerCase()))
+                .toList();
+
+        if (filtered.isEmpty()) {
+            System.out.println("No companies found matching '" + searchTerm + "'");
+            return;
+        }
+
+        System.out.println("\n=== Companies Matching '" + searchTerm + "' ===");
+        for (Company c : filtered) {
+            System.out.println("ID: " + c.getId() + " | Name: " + c.getName());
+        }
+    }
+
+    private void sortEmployeesBySalary(Company company) {
+        List<Employee> employees = company.getEmployees().stream()
+                .sorted(Comparator.comparing(Employee::getSalary).reversed())
+                .toList();
+
+        if (employees.isEmpty()) {
+            System.out.println("No employees in this company.");
+            return;
+        }
+
+        System.out.println("\n=== Employees Sorted by Salary (Highest First) ===");
+        for (Employee e : employees) {
+            System.out.printf("ID: %d | Name: %s | Salary: $%.2f%n",
+                    e.getId(), e.getName(), e.getSalary());
+        }
+    }
+
+    private void filterEmployeesByQualification(Company company) {
+        String qualName = reader.readString("Enter qualification name: ");
+
+        List<Employee> filtered = company.getEmployees().stream()
+                .filter(e -> e.getQualifications().stream()
+                        .anyMatch(q -> q.getName().equalsIgnoreCase(qualName)))
+                .toList();
+
+        if (filtered.isEmpty()) {
+            System.out.println("No employees found with qualification '" + qualName + "'");
+            return;
+        }
+
+        System.out.println("\n=== Employees with '" + qualName + "' Qualification ===");
+        for (Employee e : filtered) {
+            System.out.printf("ID: %d | Name: %s | Salary: $%.2f%n",
+                    e.getId(), e.getName(), e.getSalary());
+        }
+    }
+
+    private void sortShipmentsByDestination(Company company) {
+        List<Shipment> shipments = ShipmentDao.findAllByCompany(company.getId());
+
+        if (shipments.isEmpty()) {
+            System.out.println("No shipments found for this company.");
+            return;
+        }
+
+        shipments.sort(Comparator.comparing(Shipment::getDestination, String.CASE_INSENSITIVE_ORDER));
+
+        System.out.println("\n=== Shipments Sorted by Destination ===");
+        for (Shipment s : shipments) {
+            System.out.printf("ID: %d | %s -> %s | Cost: $%.2f | Status: %s%n",
+                    s.getId(),
+                    s.getStartLocation(),
+                    s.getDestination(),
+                    s.getCost(),
+                    s.getStatus());
         }
     }
 

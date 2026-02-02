@@ -17,7 +17,6 @@ public class VehicleDao {
     }
     public static List<Vehicle> get() {
         try(Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
-            Transaction transaction = session.beginTransaction();
             return session.createQuery("SELECT v from Vehicle v", Vehicle.class).getResultList();
         }
     }

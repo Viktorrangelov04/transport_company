@@ -5,7 +5,7 @@ import org.example.dao.EmployeeDao;
 import org.example.dao.ShipmentDao;
 import org.example.dao.VehicleDao;
 import org.example.entity.*;
-import org.example.enums.ShipingType;
+import org.example.enums.ShippingType;
 import org.example.enums.ShipmentStatus;
 import org.example.utils.InputReader;
 
@@ -45,7 +45,7 @@ public class ShippingService {
                 case 2: createFreightShipping(company); break;
                 case 3: payForShipment(company); break;
                 case 4: exportCompanyData(company); break;
-                case 5: fileService.importAndShowShipments("company_" + company.getId() + "_backup.dat"); break;
+                case 5: fileService.importAndShowShipments("exports/company_" + company.getId() + "_backup.dat"); break;
                 case 0: back = true; break;
                 default: System.out.println("Invalid option."); break;
             }
@@ -124,10 +124,10 @@ public class ShippingService {
         shipment.setStatus(ShipmentStatus.PENDING);
 
         if (isFreight) {
-            shipment.setType(ShipingType.CARRIAGE);
+            shipment.setType(ShippingType.CARRIAGE);
             shipment.setWeight(weight);
         } else {
-            shipment.setType(ShipingType.PEOPLE);
+            shipment.setType(ShippingType.PEOPLE);
         }
 
         ShipmentDao.create(shipment);

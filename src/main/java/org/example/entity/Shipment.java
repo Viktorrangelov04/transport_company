@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.example.enums.ShipingType;
+import org.example.enums.ShippingType;
 import org.example.enums.ShipmentStatus;
 
 import java.io.Serializable;
@@ -37,7 +37,7 @@ public class Shipment extends BaseEntity implements Serializable {
     private BigDecimal cost;
 
     @Enumerated(EnumType.STRING)
-    private ShipingType type;
+    private ShippingType type;
     @Enumerated(EnumType.STRING)
     private ShipmentStatus status = ShipmentStatus.PENDING;
 

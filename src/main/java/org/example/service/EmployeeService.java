@@ -2,8 +2,10 @@ package org.example.service;
 
 import org.example.dao.CompanyDao;
 import org.example.dao.EmployeeDao;
+import org.example.dao.QualificationDao;
 import org.example.entity.Company;
 import org.example.entity.Employee;
+import org.example.entity.Qualification;
 import org.example.utils.InputReader;
 
 import java.math.BigDecimal;
@@ -24,6 +26,7 @@ public class EmployeeService {
             System.out.println("[2] Add New Employee");
             System.out.println("[3] Delete Employee");
             System.out.println("[4] Update Employee Salary");
+            System.out.println("[5] Update Employee Qualification");
             System.out.println("[0] Back to Company Menu");
 
             int choice = (int) reader.readLong("Choice: ");
@@ -40,6 +43,9 @@ public class EmployeeService {
                     break;
                 case 4:
                     company = updateSalary(company);
+                    break;
+                case 5:
+                    addQualificationToEmployee(company);
                     break;
                 case 0:
                     back = true;
@@ -115,5 +121,30 @@ public class EmployeeService {
             System.out.println("Error: Employee not found.");
         }
         return company;
+    }
+
+    private void addQualificationToEmployee(Company company) {
+        listEmployees(company);
+        long empId = reader.readLong("Employee ID: ");
+        Employee emp = EmployeeDao.getById(empId);
+
+        if (emp == null) {
+            System.out.println("Employee not found.");
+            return;
+        }
+
+        QualificationDao.findAll().forEach(q ->
+                System.out.println(q.getId() + ": " + q.getName()));
+
+        String qualName = reader.readString("Qualification name: ");
+        Qualification qual = QualificationDao.findByName(qualName);
+
+        if (qual != null) {
+            emp.addQualification(qual);
+            EmployeeDao.update(emp);
+            System.out.println("Qualification added!");
+        } else {
+            System.out.println("Qualification not found.");
+        }
     }
 }

@@ -35,7 +35,7 @@ public class EmployeeDao {
         }
     }
 
-    public List<Employee> findByQualification(String qualName) {
+    public static List<Employee> findByQualification(String qualName) {
         try (Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
             return session.createQuery("SELECT e FROM Employee e " + "JOIN e.qualifications q " + "WHERE q.name = :qualName", Employee.class)
                     .setParameter("qualName", qualName)

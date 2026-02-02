@@ -1,6 +1,6 @@
 package org.example.enums;
 
-public enum ShipingType {
+public enum ShippingType {
     PEOPLE,
     CARRIAGE
 }
