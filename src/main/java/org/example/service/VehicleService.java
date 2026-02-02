@@ -7,101 +7,87 @@ import org.example.entity.Company;
 import org.example.entity.Employee;
 import org.example.entity.Qualification;
 import org.example.entity.Vehicle;
+import org.example.utils.InputReader;
 
 import java.util.Scanner;
 
 public class VehicleService {
-    private final Scanner scanner;
-    boolean back = false;
+    private final InputReader reader;
 
-    public VehicleService(Scanner scanner){
-        this.scanner = scanner;
+    public VehicleService(InputReader reader) {
+        this.reader = reader;
     }
 
-    public Company manageVehicles(Company company){
+    public Company manageVehicles(Company company) {
+        boolean back = false;
         while (!back) {
-            System.out.println("\nManaging Vehicles");
+            System.out.println("\n--- Managing Vehicles ---");
             System.out.println("[1] List Vehicles");
             System.out.println("[2] Add New Vehicle");
             System.out.println("[3] Delete Vehicle");
-            System.out.println("[4] Add Vehicle Qualification");
+            System.out.println("[4] Add/Update Vehicle Qualification");
             System.out.println("[0] Back to Company Menu");
 
-            int choice = scanner.nextInt();
-            scanner.nextLine();
+            int choice = (int) reader.readLong("Choice: ");
 
             switch (choice) {
-                case 1:
-                    listVehicles(company);
-                    break;
-                case 2:
-                    company=addVehicle(company);
-                    break;
-                case 3:
-                    company = deleteVehicle(company);
-                    break;
-                case 4:
-                    addQualification(company);
-                    break;
-                case 0:
-                    back = true;
-                    break;
+                case 1: listVehicles(company); break;
+                case 2: company = addVehicle(company); break;
+                case 3: company = deleteVehicle(company); break;
+                case 4: addQualification(company); break;
+                case 0: back = true; break;
+                default: System.out.println("Invalid option."); break;
             }
         }
         return company;
     }
 
     public void listVehicles(Company company) {
+        if (company.getVehicles().isEmpty()) {
+            System.out.println("No vehicles found for this company.");
+            return;
+        }
         for (Vehicle v : company.getVehicles()) {
             String qual = (v.getQualification() != null) ? v.getQualification().getName() : "None";
             System.out.println("ID: " + v.getId() + " | Model: " + v.getName() + " | Required Qual: " + qual);
         }
     }
 
-    public Company addVehicle(Company company){
-        System.out.println("name:");
-        String name = scanner.nextLine();
+    public Company addVehicle(Company company) {
+        String name = reader.readString("Enter vehicle model/name: ");
         Vehicle vehicle = new Vehicle(name, company);
         company.addVehicle(vehicle);
 
-        Company updated = CompanyDao.update(company);
+        CompanyDao.update(company);
+        System.out.println("Vehicle added!");
 
-        System.out.println("Vehicle added");
-        return updated;
+        // Re-fetch to sync IDs
+        return CompanyDao.getById(company.getId());
     }
 
-    public Company deleteVehicle(Company company){
-        System.out.print("Enter Vehicle ID to delete: ");
+    public Company deleteVehicle(Company company) {
+        listVehicles(company);
+        long id = reader.readLong("Enter Vehicle ID to delete: ");
 
-        while (!scanner.hasNextLong()) {
-            scanner.next();
-        }
-        Long id = scanner.nextLong();
-        scanner.nextLine();
+        Vehicle toRemove = company.getVehicles().stream()
+                .filter(v -> v.getId().equals(id))
+                .findFirst()
+                .orElse(null);
 
-        Vehicle toRemove = null;
-        for (Vehicle v : company.getVehicles()) {
-            if (v.getId().equals(id)) {
-                toRemove = v;
-                break;
-            }
-        }
         if (toRemove != null) {
             company.getVehicles().remove(toRemove);
-
-            Company updated = CompanyDao.update(company);
-
+            CompanyDao.update(company);
             System.out.println("Vehicle deleted successfully.");
-            return updated;
+            return CompanyDao.getById(company.getId());
         } else {
             System.out.println("Vehicle not found in this company.");
             return company;
         }
     }
 
-    public void addQualification(Company company){
-        System.out.print("Enter Vehicle ID to update: ");
-        long vehicleId = Long.parseLong(scanner.nextLine());
+    public void addQualification(Company company) {
+        listVehicles(company);
+        long vehicleId = reader.readLong("Enter Vehicle ID to update: ");
         Vehicle vehicle = VehicleDao.getById(vehicleId);
 
         if (vehicle == null || !vehicle.getCompany().getId().equals(company.getId())) {
@@ -109,17 +95,15 @@ public class VehicleService {
             return;
         }
 
-        System.out.println("New Qualification name:");
-        String qual = scanner.nextLine();
-        Qualification newQual = QualificationDao.findByName(qual);
+        String qualName = reader.readString("Enter required Qualification name: ");
+        Qualification newQual = QualificationDao.findByName(qualName);
 
         if (newQual != null) {
             vehicle.setQualification(newQual);
-
             VehicleDao.update(vehicle);
-            System.out.println("Qualification updated!");
+            System.out.println("Qualification updated successfully!");
         } else {
-            System.out.println("Error: Qualification '" + qual + "' not found in database.");
+            System.out.println("Error: Qualification '" + qualName + "' not found in database.");
         }
     }
 }

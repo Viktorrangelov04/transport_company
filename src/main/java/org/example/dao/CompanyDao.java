@@ -31,7 +31,9 @@ public class CompanyDao {
 
     public List<Company> filterByName(String namePart) {
         try (Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
-            return session.createQuery("FROM Company WHERE name LIKE :name", Company.class)
+            return session.createQuery(
+                            "SELECT c FROM Company c WHERE c.name LIKE :name",
+                            Company.class)
                     .setParameter("name", "%" + namePart + "%")
                     .list();
         }

@@ -4,29 +4,29 @@ import org.example.dao.CompanyDao;
 import org.example.dao.EmployeeDao;
 import org.example.entity.Company;
 import org.example.entity.Employee;
+import org.example.utils.InputReader;
 
 import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class EmployeeService {
-    private final Scanner scanner;
-    boolean back = false;
+    private final InputReader reader;
 
-    public EmployeeService(Scanner scanner){
-        this.scanner = scanner;
+    public EmployeeService(InputReader reader) {
+        this.reader = reader;
     }
 
     public Company manageEmployees(Company company) {
+        boolean back = false;
         while (!back) {
             System.out.println("\nManaging Employees...");
             System.out.println("[1] List Employees");
             System.out.println("[2] Add New Employee");
             System.out.println("[3] Delete Employee");
-            System.out.println("[4] Update Employee salary");
+            System.out.println("[4] Update Employee Salary");
             System.out.println("[0] Back to Company Menu");
 
-            int choice = scanner.nextInt();
-            scanner.nextLine();
+            int choice = (int) reader.readLong("Choice: ");
 
             switch (choice) {
                 case 1:
@@ -44,21 +44,26 @@ public class EmployeeService {
                 case 0:
                     back = true;
                     break;
+                default:
+                    System.out.println("Invalid option.");
+                    break;
             }
         }
         return company;
     }
 
     public void listEmployees(Company company) {
+        if (company.getEmployees().isEmpty()) {
+            System.out.println("No employees found in this company.");
+            return;
+        }
         company.getEmployees().forEach(e ->
-                System.out.println(e.getId() + ": " + e.getName() + " (" + e.getSalary() + ")"));
+                System.out.println(e.getId() + ": " + e.getName() + " | Salary: $" + e.getSalary()));
     }
 
     public Company addEmployee(Company company) {
-        System.out.print("Name: ");
-        String name = scanner.nextLine();
-        System.out.print("Salary: ");
-        BigDecimal salary = scanner.nextBigDecimal();
+        String name = reader.readString("Name: ");
+        BigDecimal salary = reader.readBigDecimal("Salary: ");
 
         Employee newEmp = new Employee(name, salary, company);
         company.addEmployee(newEmp);
@@ -66,32 +71,23 @@ public class EmployeeService {
         Company updated = CompanyDao.update(company);
         System.out.println("Employee added!");
 
-        return updated;
+        return CompanyDao.getById(updated.getId());
     }
 
     public Company deleteEmployee(Company company) {
-        System.out.print("Enter Employee ID to delete: ");
-        while (!scanner.hasNextLong()) {
-            scanner.next();
-        }
-        Long id = scanner.nextLong();
-        scanner.nextLine();
+        listEmployees(company);
+        long id = reader.readLong("Enter Employee ID to delete: ");
 
-        Employee toRemove = null;
-        for (Employee e : company.getEmployees()) {
-            if (e.getId().equals(id)) {
-                toRemove = e;
-                break;
-            }
-        }
+        Employee toRemove = company.getEmployees().stream()
+                .filter(e -> e.getId().equals(id))
+                .findFirst()
+                .orElse(null);
 
         if (toRemove != null) {
             company.getEmployees().remove(toRemove);
-
-            Company updated = CompanyDao.update(company);
-
+            CompanyDao.update(company);
             System.out.println("Employee deleted successfully.");
-            return updated;
+            return CompanyDao.getById(company.getId());
         } else {
             System.out.println("Employee not found in this company.");
             return company;
@@ -99,33 +95,25 @@ public class EmployeeService {
     }
 
     public Company updateSalary(Company company) {
-        System.out.println("Enter Employee ID to update salary: ");
-        while (!scanner.hasNextLong()) {
-            scanner.next();
-        }
-        Long id = scanner.nextLong();
-        scanner.nextLine();
+        listEmployees(company);
+        long id = reader.readLong("Enter Employee ID to update: ");
+
         Employee employee = EmployeeDao.getById(id);
-
-        System.out.println("Enter new salary: ");
-        while(!scanner.hasNextBigDecimal()) {
-            scanner.next();
-        }
-        BigDecimal salary = scanner.nextBigDecimal();
-        scanner.nextLine();
-
         if (employee != null) {
-            employee.setSalary(salary);
+            BigDecimal newSalary = reader.readBigDecimal("Enter new salary: ");
+            employee.setSalary(newSalary);
 
             EmployeeDao.update(employee);
 
             company.getEmployees().stream()
                     .filter(e -> e.getId().equals(id))
                     .findFirst()
-                    .ifPresent(e -> e.setSalary(salary));
-        }
+                    .ifPresent(e -> e.setSalary(newSalary));
 
-        System.out.println("Employee updated successfully.");
+            System.out.println("Salary updated successfully.");
+        } else {
+            System.out.println("Error: Employee not found.");
+        }
         return company;
     }
-    }
+}

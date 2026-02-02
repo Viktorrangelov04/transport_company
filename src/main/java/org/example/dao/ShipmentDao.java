@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 public class ShipmentDao {
@@ -69,4 +70,48 @@ public class ShipmentDao {
                     .list();
         }
     }
+
+    //reports
+    public static Long getTotalShipmentCount(Long companyId) {
+        try (Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
+            return session.createQuery("SELECT COUNT(s) FROM Shipment s WHERE s.company.id = :id", Long.class)
+                    .setParameter("id", companyId)
+                    .uniqueResult();
+        }
+    }
+
+    public static BigDecimal getTotalRevenue(Long companyId) {
+        try (Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
+            BigDecimal result = session.createQuery("SELECT SUM(s.cost) FROM Shipment s WHERE s.company.id = :id", BigDecimal.class)
+                    .setParameter("id", companyId)
+                    .uniqueResult();
+            return result != null ? result : BigDecimal.ZERO;
+        }
+    }
+
+    public static BigDecimal getRevenueForPeriod(Long companyId, LocalDate start, LocalDate end) {
+        try (Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
+            BigDecimal result = session.createQuery(
+                            "SELECT SUM(s.cost) FROM Shipment s " +
+                                    "WHERE s.company.id = :id AND s.startDate >= :start AND s.endDate <= :end", BigDecimal.class)
+                    .setParameter("id", companyId)
+                    .setParameter("start", start)
+                    .setParameter("end", end)
+                    .uniqueResult();
+            return result != null ? result : BigDecimal.ZERO;
+        }
+    }
+
+    public static List<Object[]> getDriverReport(Long companyId) {
+        try (Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
+            return session.createQuery(
+                            "SELECT s.employee.name, COUNT(s), SUM(s.cost) " +
+                                    "FROM Shipment s " +
+                                    "WHERE s.company.id = :id " +
+                                    "GROUP BY s.employee.id, s.employee.name", Object[].class)
+                    .setParameter("id", companyId)
+                    .list();
+        }
+    }
+
 }

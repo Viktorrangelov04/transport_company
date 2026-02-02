@@ -7,30 +7,33 @@ import org.example.entity.Company;
 import org.example.entity.Shipment;
 import org.example.entity.Vehicle;
 import org.example.enums.ShipmentStatus;
+import org.example.utils.InputReader;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Scanner;
 
 public class ClientService {
-    private final Scanner scanner;
-    boolean back = false;
-    public ClientService(Scanner scanner){
-        this.scanner = scanner;
+    private final InputReader inputReader;
+
+    public ClientService(InputReader inputReader) {
+        this.inputReader = inputReader;
     }
-    public Company manageClients(Company company){
+
+    public Company manageClients(Company company) {
+        boolean back = false;
         while (!back) {
             System.out.println("\nManaging Clients...");
             System.out.println("[1] List Clients");
             System.out.println("[2] Add New Client");
             System.out.println("[3] Delete Client");
-            System.out.println("[4] Check owed money");
+            System.out.println("[4] Check Owed Money");
             System.out.println("[0] Back to Company Menu");
 
-            int choice = scanner.nextInt();
-            scanner.nextLine();
 
-            switch (choice) {
+            long choice = inputReader.readLong("Choice: ");
+
+            switch ((int) choice) {
                 case 1:
                     listClients(company);
                     break;
@@ -46,6 +49,9 @@ public class ClientService {
                 case 0:
                     back = true;
                     break;
+                default:
+                    System.out.println("Invalid choice.");
+                    break;
             }
         }
         return company;
@@ -56,60 +62,42 @@ public class ClientService {
                 System.out.println(c.getId() + ": " + c.getName()));
     }
 
-    public Company addClient(Company company){
-        System.out.println("name:");
-        String name = scanner.nextLine();
+    public Company addClient(Company company) {
+        String name = inputReader.readString("Enter client name: ");
 
-        Client client  = new Client(name, company);
+        Client client = new Client(name, company);
         company.addClient(client);
 
         Company updated = CompanyDao.update(company);
-        System.out.println("Client added");
-
+        System.out.println("Client added successfully.");
         return updated;
     }
-    public Company deleteClient(Company company){
-        System.out.print("Enter Client ID to delete: ");
 
-        while (!scanner.hasNextLong()) {
-            scanner.next();
-        }
-        Long id = scanner.nextLong();
-        scanner.nextLine();
+    public Company deleteClient(Company company) {
+        listClients(company);
+        long id = inputReader.readLong("Enter client ID to delete: ");
 
-        Client toRemove = null;
-        for (Client c : company.getClients()) {
-            if (c.getId().equals(id)) {
-                toRemove = c;
-                break;
-            }
-        }
+        Client toRemove = company.getClients().stream()
+                .filter(c -> c.getId().equals(id))
+                .findFirst()
+                .orElse(null);
+
         if (toRemove != null) {
             company.getClients().remove(toRemove);
-
-            Company updated = CompanyDao.update(company);
-
+            CompanyDao.update(company);
             System.out.println("Client deleted successfully.");
-            return updated;
+            return CompanyDao.getById(company.getId());
         } else {
             System.out.println("Client not found in this company.");
             return company;
         }
     }
 
-    public void getOwedMoney(Company company){
+    public void getOwedMoney(Company company) {
         listClients(company);
-        System.out.println("Enter Client ID to get owed money: ");
-        while (!scanner.hasNextLong()) {
-            scanner.next();
-        }
-        Long id = scanner.nextLong();
-        scanner.nextLine();
+        long id = inputReader.readLong("Enter client ID to check balance: ");
 
         BigDecimal totalOwed = ShipmentDao.getTotalOwedByClient(id);
-
-        System.out.println("Total Balance Owed: $" + totalOwed);
+        System.out.println("Total owed money:" + totalOwed);
     }
-
-
 }
