@@ -35,10 +35,11 @@ public class VehicleDao {
         }
     }
     public static void delete(long id) {
-        try(Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
+        try (Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
-            Vehicle vehicle1=session.find(Vehicle.class, id);
-            session.remove(vehicle1);
+            session.createMutationQuery("DELETE FROM Vehicle WHERE id = :id")
+                    .setParameter("id", id)
+                    .executeUpdate();
             transaction.commit();
         }
     }

@@ -38,11 +38,12 @@ public class ClientDao {
         }
     }
 
-    public static void delete(long id){
-        try(Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
+    public static void delete(long id) {
+        try (Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
-            Client client = session.find(Client.class, id);
-            session.remove(client);
+            session.createMutationQuery("DELETE FROM Client WHERE id = :id")
+                    .setParameter("id", id)
+                    .executeUpdate();
             transaction.commit();
         }
     }

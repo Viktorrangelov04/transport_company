@@ -70,10 +70,12 @@ public class ClientDaoTest {
     @Order(5)
     void testDelete() {
         Client toDelete = new Client("To Delete", testCompany);
+        testCompany.addClient(toDelete);
         ClientDao.create(toDelete);
         Long id = toDelete.getId();
         assertNotNull(id);
 
+        testCompany.getClients().remove(toDelete);
         ClientDao.delete(id);
 
         Client found = ClientDao.getById(id);

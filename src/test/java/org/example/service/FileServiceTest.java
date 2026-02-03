@@ -47,18 +47,21 @@ public class FileServiceTest {
     @Test
     void testExportAndImport() {
         List<Shipment> shipments = createTestShipments();
-        fileService.exportShipments(shipments, TEST_FILENAME);
+        String filename = "junit_test.dat";
+        fileService.exportShipments(shipments, filename);
 
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         PrintStream originalOut = System.out;
         System.setOut(new PrintStream(outContent));
 
-        fileService.importAndShowShipments(TEST_FILENAME);
-
-        System.setOut(originalOut);
+        try {
+            fileService.importAndShowShipments(filename);
+        } finally {
+            System.setOut(originalOut);
+        }
 
         String output = outContent.toString();
-        assertTrue(output.contains("Varna"), "Output should contain 'Varna'. Actual: " + output);
+        assertTrue(output.contains("Varna"), "Console output should contain 'Varna'. Output was: " + output);
     }
 
     @Test

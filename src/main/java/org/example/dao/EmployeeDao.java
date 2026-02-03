@@ -59,11 +59,11 @@ public class EmployeeDao {
     }
 
     public static void delete(long id) {
-        try(Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
+        try (Session session = SessionFactoryUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
-            Employee employee1=session.find(Employee.class, id);
-
-            session.remove(employee1);
+            session.createMutationQuery("DELETE FROM Employee WHERE id = :id")
+                    .setParameter("id", id)
+                    .executeUpdate();
             transaction.commit();
         }
     }

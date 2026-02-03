@@ -27,7 +27,9 @@ public class FileService {
 
     @SuppressWarnings("unchecked")
     public void importAndShowShipments(String filename) {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
+        File file = new File("exports", filename);
+
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
             List<Shipment> shipments = (List<Shipment>) ois.readObject();
 
             System.out.println("=== Data from File ===");
