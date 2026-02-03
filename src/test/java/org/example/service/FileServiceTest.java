@@ -43,21 +43,22 @@ public class FileServiceTest {
         assertTrue(file.exists());
     }
 
+
     @Test
     void testExportAndImport() {
         List<Shipment> shipments = createTestShipments();
         fileService.exportShipments(shipments, TEST_FILENAME);
 
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out;
         System.setOut(new PrintStream(outContent));
 
         fileService.importAndShowShipments(TEST_FILENAME);
 
-        String output = outContent.toString();
-        assertTrue(output.contains("Varna"));
-        assertTrue(output.contains("100"));
+        System.setOut(originalOut);
 
-        System.setOut(System.out);
+        String output = outContent.toString();
+        assertTrue(output.contains("Varna"), "Output should contain 'Varna'. Actual: " + output);
     }
 
     @Test

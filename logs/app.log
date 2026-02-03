@@ -2147,3 +2147,35 @@ org.hibernate.ObjectNotFoundException: No row with the given identifier exists f
 	Minimum pool size: 1
 	Maximum pool size: 20
 [2026-02-02 20:58:17] INFO  JtaPlatformInitiator:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-02-02 21:29:08] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2026-02-02 21:29:08] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2026-02-02 21:29:08] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2026-02-02 21:29:08] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2026-02-02 21:29:09] INFO  JtaPlatformInitiator:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-02-02 21:38:43] INFO  Version:45 - HHH000412: Hibernate ORM core version 7.1.4.Final
+[2026-02-02 21:38:43] INFO  Environment:147 - HHH000205: Loaded properties from resource hibernate.properties: {jakarta.persistence.jdbc.url=jdbc:mysql://127.0.0.1:3306/transport_company, jakarta.persistence.jdbc.user=root, hibernate.hbm2ddl.auto=update, jakarta.persistence.jdbc.driver=com.mysql.cj.jdbc.Driver, hibernate.show_sql=true, jakarta.persistence.jdbc.password=****}
+[2026-02-02 21:38:43] WARN  pooling:85 - HHH10001002: Using built-in connection pool (not intended for production use)
+[2026-02-02 21:38:43] INFO  pooling:184 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/transport_company]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.4
+	Default catalog/schema: transport_company/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2026-02-02 21:38:44] INFO  JtaPlatformInitiator:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)

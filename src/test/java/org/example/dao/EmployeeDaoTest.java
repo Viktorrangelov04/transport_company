@@ -47,7 +47,7 @@ public class EmployeeDaoTest {
         Employee found = EmployeeDao.getById(testEmployee.getId());
         assertNotNull(found);
         assertEquals("John Driver", found.getName());
-        assertEquals(new BigDecimal("1500"), found.getSalary());
+        assertEquals(0, new BigDecimal("1500").compareTo(found.getSalary()));
     }
 
     @Test
@@ -57,7 +57,7 @@ public class EmployeeDaoTest {
         EmployeeDao.update(testEmployee);
 
         Employee found = EmployeeDao.getById(testEmployee.getId());
-        assertEquals(new BigDecimal("2000"), found.getSalary());
+        assertEquals(0, new BigDecimal("2000").compareTo(found.getSalary()));
     }
 
     @Test
@@ -73,6 +73,7 @@ public class EmployeeDaoTest {
         Employee toDelete = new Employee("To Delete", new BigDecimal("1000"), testCompany);
         EmployeeDao.create(toDelete);
         Long id = toDelete.getId();
+        assertNotNull(id);
 
         EmployeeDao.delete(id);
 

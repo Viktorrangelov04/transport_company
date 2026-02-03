@@ -72,6 +72,7 @@ public class ClientDaoTest {
         Client toDelete = new Client("To Delete", testCompany);
         ClientDao.create(toDelete);
         Long id = toDelete.getId();
+        assertNotNull(id);
 
         ClientDao.delete(id);
 

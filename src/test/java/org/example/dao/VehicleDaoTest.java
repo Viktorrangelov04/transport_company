@@ -72,6 +72,7 @@ public class VehicleDaoTest {
         Vehicle toDelete = new Vehicle("To Delete", testCompany);
         VehicleDao.create(toDelete);
         Long id = toDelete.getId();
+        assertNotNull(id);
 
         VehicleDao.delete(id);
 

@@ -85,7 +85,7 @@ public class ShipmentDaoTest {
     @Order(4)
     void testGetTotalRevenue() {
         BigDecimal revenue = ShipmentDao.getTotalRevenue(testCompany.getId());
-        assertEquals(new BigDecimal("500"), revenue);
+        assertEquals(0, new BigDecimal("500").compareTo(revenue));
     }
 
     @Test
@@ -95,7 +95,7 @@ public class ShipmentDaoTest {
         LocalDate end = LocalDate.now().plusDays(2);
 
         BigDecimal revenue = ShipmentDao.getRevenueForPeriod(testCompany.getId(), start, end);
-        assertEquals(new BigDecimal("500"), revenue);
+        assertEquals(0, new BigDecimal("500").compareTo(revenue));
     }
 
     @Test
@@ -109,7 +109,7 @@ public class ShipmentDaoTest {
     @Order(7)
     void testGetTotalOwedByClient() {
         BigDecimal owed = ShipmentDao.getTotalOwedByClient(testClient.getId());
-        assertEquals(new BigDecimal("500"), owed);
+        assertEquals(0, new BigDecimal("500").compareTo(owed));
     }
 
     @Test
