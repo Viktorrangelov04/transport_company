@@ -7,9 +7,7 @@ import org.example.entity.Company;
 import org.example.entity.Employee;
 import org.example.entity.Qualification;
 import org.example.utils.InputReader;
-
 import java.math.BigDecimal;
-import java.util.Scanner;
 
 public class EmployeeService {
     private final InputReader reader;

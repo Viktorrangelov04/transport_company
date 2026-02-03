@@ -1,21 +1,12 @@
 package org.example;
 
-import org.example.configuration.SessionFactoryUtil;
 import org.example.dao.*;
 import org.example.entity.*;
 import org.example.service.*;
 import org.example.utils.InputReader;
-
-import java.math.BigDecimal;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.SQLOutput;
-import java.time.LocalDate;
-import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
-import java.util.stream.Collectors;
+
 
 import static com.google.protobuf.JavaFeaturesProto.java;
 

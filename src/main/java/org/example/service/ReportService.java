@@ -7,7 +7,6 @@ import org.example.utils.InputReader;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Scanner;
 
 public class ReportService {
     private final InputReader reader;

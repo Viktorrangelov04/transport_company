@@ -1,7 +1,6 @@
 package org.example.service;
 
 import org.example.dao.CompanyDao;
-import org.example.dao.EmployeeDao;
 import org.example.dao.ShipmentDao;
 import org.example.entity.Company;
 import org.example.entity.Employee;
@@ -137,7 +136,6 @@ public class MenuService {
             return;
         }
 
-        // Sort by revenue descending
         companies.sort((c1, c2) -> {
             BigDecimal rev1 = ShipmentDao.getTotalRevenue(c1.getId());
             BigDecimal rev2 = ShipmentDao.getTotalRevenue(c2.getId());

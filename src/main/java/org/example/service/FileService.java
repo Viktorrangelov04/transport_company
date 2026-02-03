@@ -9,9 +9,6 @@ public class FileService {
     public void exportShipments(List<Shipment> shipments, String filename) {
         try {
             File directory = new File("exports");
-            if (!directory.exists()) {
-                directory.mkdir();
-            }
 
             File file = new File(directory, filename);
             

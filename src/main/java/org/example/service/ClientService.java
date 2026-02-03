@@ -4,14 +4,8 @@ import org.example.dao.CompanyDao;
 import org.example.dao.ShipmentDao;
 import org.example.entity.Client;
 import org.example.entity.Company;
-import org.example.entity.Shipment;
-import org.example.entity.Vehicle;
-import org.example.enums.ShipmentStatus;
 import org.example.utils.InputReader;
-
 import java.math.BigDecimal;
-import java.util.List;
-import java.util.Scanner;
 
 public class ClientService {
     private final InputReader inputReader;

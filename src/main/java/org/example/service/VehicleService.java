@@ -4,12 +4,9 @@ import org.example.dao.CompanyDao;
 import org.example.dao.QualificationDao;
 import org.example.dao.VehicleDao;
 import org.example.entity.Company;
-import org.example.entity.Employee;
 import org.example.entity.Qualification;
 import org.example.entity.Vehicle;
 import org.example.utils.InputReader;
-
-import java.util.Scanner;
 
 public class VehicleService {
     private final InputReader reader;
@@ -60,8 +57,6 @@ public class VehicleService {
 
         CompanyDao.update(company);
         System.out.println("Vehicle added!");
-
-        // Re-fetch to sync IDs
         return CompanyDao.getById(company.getId());
     }
 
