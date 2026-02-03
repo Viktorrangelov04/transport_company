@@ -20,8 +20,6 @@ public class Qualification extends BaseEntity implements Serializable {
     @Column(unique = true, nullable = false)
     private String name;
 
-    private String description;
-
     @OneToMany(mappedBy = "qualification")
     private Set<Vehicle> vehicles;
 }
